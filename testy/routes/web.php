@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/properties');
 });
+
+Route::get('/properties/getFromAPI', 'App\Http\Controllers\PropertiesController@apiLoad');
+
+// Route::get('taskfilter/{project}', 'App\Http\Controllers\TasksController@getByProject');
+
+Route::resource('properties','App\Http\Controllers\PropertiesController');
